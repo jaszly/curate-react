@@ -1,12 +1,17 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+// import Signup from './components/auth/signup'
+import Spaces from './components/layout/spaces'
 import './App.css'
 
 class App extends React.Component {
 	render() {
 		return (
-			<div className="App">
-				<h1>what</h1>
-			</div>
+			<BrowserRouter>
+				<Switch>
+					<Route path="/spaces" component={Spaces} />
+				</Switch>
+			</BrowserRouter>
 		)
 	}
 }
