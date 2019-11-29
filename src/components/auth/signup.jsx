@@ -1,5 +1,18 @@
 import React from 'react'
 import axios from 'axios'
+import Avatar from '@material-ui/core/Avatar'
+import Button from '@material-ui/core/Button'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import TextField from '@material-ui/core/TextField'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Checkbox from '@material-ui/core/Checkbox'
+import Link from '@material-ui/core/Link'
+import Grid from '@material-ui/core/Grid'
+import Box from '@material-ui/core/Box'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
+import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
+import Container from '@material-ui/core/Container'
 
 class Signup extends React.Component {
 	state = {
@@ -7,8 +20,6 @@ class Signup extends React.Component {
 			name: '',
 			email: '',
 			password: '',
-			thing: '',
-			location: '',
 			avatar: ''
 		}
 	}
@@ -40,56 +51,12 @@ class Signup extends React.Component {
 			.post('http://localhost:4000/signup', data)
 			.then(res => {
 				localStorage.setItem('token', res.data)
-				this.props.history.push('/landing')
+				this.props.history.push('/spaces')
 			})
 			.catch(err => {
 				console.log(err)
 			})
 	}
-
-	// 	axios
-	// 		.post('http://localhost:4000/signup', this.state.user)
-	// 		.then(res => {
-	// 			this.setState({
-	// 				user: res.data
-	// 			})
-	// 		})
-	// 		.catch(err => {
-	// 			console.log(err)
-	// 		})
-	// }
-
-	// userSignup = e => {
-	// 	e.preventDefault()
-	// 	axios
-	// 		.post('http://localhost:4000/signup', this.state.user)
-	// 		.then(res => {
-	// 			this.setState(this.state.user)
-	// 			console.log(res)
-	// 			if (res.data.token) {
-	// 				localStorage.setItem('token', res.data.token)
-	// 				this.props.history.push('/places')
-	// 			}
-	// 		})
-	// 		.catch(err => {
-	// 			console.log(err)
-	// 		})
-	// }
-
-	// fn signup takes user in state
-	// signup = event => {
-	// 	event.preventDefault()
-	// 	axios.post('http://localhost:4000/signup', this.state.user)
-	// 	.then(res => {
-	// 		console.log(res)
-	// 	})
-	// }
-	// sends to api at /signup
-	//
-	// changeInput = (event) => {
-	// 	event.target.value()
-	// }
-	//
 
 	render() {
 		return (
@@ -97,13 +64,6 @@ class Signup extends React.Component {
 				<div className="grid center middle tall image">
 					<div className="card small">
 						<div className="content">
-							<div
-								className="logo"
-								style={{
-									backgroundImage:
-										'url("https://i.ibb.co/dc0pVVL/Luxe-Logo-Luxberry.png")'
-								}}
-							/>
 							<form onSubmit={this.signup}>
 								<div className="group">
 									<label>Name</label>
@@ -129,18 +89,7 @@ class Signup extends React.Component {
 										onChange={e => this.changeInput(e, 'password')}
 									/>
 								</div>
-								<div className="group">
-									<label>Location</label>
-									<input
-										type="text"
-										value={this.state.user.location}
-										onChange={e => this.changeInput(e, 'location')}
-									/>
-								</div>
-								<div className="group">
-									<label>Profile Picture</label>
-									<input type="file" />
-								</div>
+
 								<button
 									className="primary"
 									onClick={e => this.signup(e, this.state.user)}
