@@ -1,9 +1,11 @@
 import React from 'react'
-import cards from './cards.jsx'
+import Cards from './cards.jsx'
 import axios from 'axios'
 
 class Spaces extends React.Component {
-	state = {}
+	state = {
+		spaces: []
+	}
 
 	componentWillMount() {
 		axios
@@ -27,7 +29,7 @@ class Spaces extends React.Component {
 			<div>
 				<div className="grid five large">
 					{this.state.spaces.map((space, i) => (
-						<cards space={space} />
+						<Cards space={space} />
 					))}
 				</div>
 			</div>

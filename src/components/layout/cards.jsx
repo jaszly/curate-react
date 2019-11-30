@@ -25,14 +25,12 @@ class Cards extends React.Component {
 					</button>
 				</div>
 				<div className="content">
-					<small className="meta">
-						{this.props.space.type.type} • {this.props.space.bedrooms} Bedrooms
-					</small>
+					<small className="meta">{this.props.space.neighborhood}</small>
 					<h2>{this.props.space.title}</h2>
 					<small className="location">
-						<i className="fas fa-map-marker-alt" />
+						<i className="fas fa-map-pin" />
 
-						<span>something</span>
+						<span>{this.props.space.city}</span>
 					</small>
 
 					<div>
@@ -41,6 +39,8 @@ class Cards extends React.Component {
 						) : (
 							''
 						)}
+						<button>Explore This Space</button>
+						<button>book</button>
 					</div>
 				</div>
 			</Link>
