@@ -25,20 +25,22 @@ class Cards extends React.Component {
 					</button>
 				</div>
 				<div className="content">
-					<small className="meta">{this.props.space.neighborhood}</small>
+					{this.props.space.price ? (
+						<span className="price">${this.props.space.price} / hour</span>
+					) : (
+						''
+					)}
 					<h2>{this.props.space.title}</h2>
 					<small className="location">
 						<i className="fas fa-map-pin" />
 
-						<span>{this.props.space.city}</span>
+						<span>
+							{this.props.space.neighborhood}{' '}
+							<span className="city"> | {this.props.space.city}</span>
+						</span>
 					</small>
 
 					<div>
-						{this.props.space.price ? (
-							<span className="price">${this.props.space.price}/hour</span>
-						) : (
-							''
-						)}
 						<button>Explore This Space</button>
 						<button>book</button>
 					</div>

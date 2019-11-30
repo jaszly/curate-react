@@ -72,9 +72,8 @@ a.card {
 }
 
 .card .content small.meta {
-	color: #8a8a8a;
-	text-transform: uppercase;
-	font-family: Arial, sans-serif;
+	color: #5e5e5e;
+	font-family: 'Open Sans';
 	font-size: 11px;
 	font-weight: bold;
 }
@@ -83,8 +82,12 @@ a.card {
 	margin-bottom: 10px;
 }
 
+/* neighborhood pin location */
 .card .content small.location i + span {
 	margin-left: 0;
+	font-family: 'Open Sans';
+	font-size: 15px;
+	color: #5e5e5e;
 }
 
 /* space.title */
@@ -97,8 +100,9 @@ a.card {
 
 .card .content .price,
 .card .content .rating {
-	font-size: 13px;
-	color: #5e5e5e;
+	font-size: 15px;
+	font-family: 'Open Sans';
+	color: #8a8a8a;
 	display: block;
 }
 
@@ -118,14 +122,21 @@ a.card {
 }
 
 .card .location {
+	color: #8a8a8a;
 	display: block;
-	font-size: 15px;
-	text-transform: uppercase;
+	font-size: 20px;
 	margin-top: 10px;
+	border-bottom: 1px solid #e2e2e2;
+	text-transform: capitalize;
 }
-
+/*this.city */
+.card .location .city {
+	text-transform: uppercase;
+}
+/* margin bottom- divider line */
 .card .location i {
 	margin-right: 5px;
+	margin-bottom: 25px;
 }
 
 .card.specs ul > li {
