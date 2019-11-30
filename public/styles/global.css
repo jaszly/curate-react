@@ -2,7 +2,7 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: Lato, sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 p {
@@ -42,7 +42,7 @@ h1 {
 	position: relative;
 }
 
-input[type=text],
+input[type='text'],
 select,
 textarea {
 	border: 1px solid #e2e2e2;
