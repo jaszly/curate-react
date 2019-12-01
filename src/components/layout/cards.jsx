@@ -13,7 +13,8 @@ class Cards extends React.Component {
 	render() {
 		return (
 			<>
-				<Link className="card link" to={`/spaces/${this.props.space._id}`}>
+				<Link className="card link">
+					{' '}
 					<div
 						className="image"
 						style={{ backgroundImage: `url('${this.props.space.image}')` }}
@@ -35,8 +36,12 @@ class Cards extends React.Component {
 						</small>
 
 						<div>
-							<button>Explore This Space</button>
-							<button>Book</button>
+							<Link to={`/spaces/${this.props.space._id}`}>
+								<button> Explore This Space</button>{' '}
+							</Link>
+							<Link to={`/book/${this.props.space._id}`}>
+								<button>Book</button>
+							</Link>
 						</div>
 					</div>
 				</Link>

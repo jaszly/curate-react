@@ -10,8 +10,8 @@ class App extends React.Component {
 		return (
 			<BrowserRouter>
 				<Switch>
-					<Route path="/spaces" component={Spaces} />
 					<Route path="/spaces/:id" component={Space} />
+					<Route path="/spaces" component={Spaces} />
 				</Switch>
 			</BrowserRouter>
 		)

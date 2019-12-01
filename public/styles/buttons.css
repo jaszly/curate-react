@@ -3,7 +3,7 @@ button,
 	background: white;
 	box-sizing: border-box;
 	border-radius: 2px;
-	border: 1px solid #e0b4b2;
+	border: 1px solid #dba3a0;
 	font-size: 14px;
 	font-family: 'Open Sans';
 	height: 50px;
@@ -16,13 +16,13 @@ button,
 
 button:hover,
 .button:hover {
-	background-color: #e0b1af;
+	background-color: #dba3a0;
 	color: white;
 }
 
 button.primary,
 .button.primary {
-	background: #00988f;
+	background: #dba3a0;
 	color: white;
 	padding: 14px 20px;
 	font-size: 16px;

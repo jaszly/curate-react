@@ -117,7 +117,7 @@ class Space extends React.Component {
 								<div className="content large">
 									<h3>
 										${this.state.space.price}
-										<small>per night</small>
+										<small>per hour</small>
 									</h3>
 									<small>
 										<i className="fas fa-star"></i>
