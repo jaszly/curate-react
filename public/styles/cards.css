@@ -1,6 +1,9 @@
 .card {
 	border: 1px solid #e2e2e2;
 	width: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 a.card {
@@ -120,6 +123,7 @@ a.card {
 .card .content .likes i:last-child {
 	margin-right: 5px;
 }
+/* margin bottom- divider line */
 
 .card .location {
 	color: #8a8a8a;

@@ -1,0 +1,18 @@
+.hero {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+	background-image: url('https://i.ibb.co/DYsr5NG/tanya-santos-p3-Xp-CE4-NYTg-unsplash.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.logo {
+	background-image: url('https://i.ibb.co/kyHGqYL/Curate.jpg');
+}

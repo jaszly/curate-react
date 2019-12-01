@@ -1,5 +1,6 @@
 import React from 'react'
 import Cards from './cards.jsx'
+import Header from './header.jsx'
 import axios from 'axios'
 
 class Spaces extends React.Component {
@@ -22,6 +23,7 @@ class Spaces extends React.Component {
 	render() {
 		return (
 			<div>
+				<Header />
 				<div className="grid five large">
 					{this.state.spaces.map((space, i) => (
 						<Cards space={space} key={i} />

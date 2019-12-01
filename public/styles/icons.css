@@ -1,5 +1,6 @@
 i {
 	color: #a2a2a2;
+	/* this color to match coral buttons */
 }
 
 .fa-heart.fas {
@@ -14,3 +15,5 @@ i {
 small i + span {
 	margin-left: 10px;
 }
+
+/* change pin location color here */
