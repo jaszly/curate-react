@@ -9,9 +9,6 @@ class Header extends React.Component {
 					<div className="hero-inner">
 						<h1>Curate</h1>
 						<h2>Stylish Spaces for Content Creators</h2>
-						<a href="https://example.com/" className="button">
-							button
-						</a>
 					</div>
 				</div>
 				<main>content</main>

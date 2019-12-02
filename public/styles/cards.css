@@ -38,10 +38,12 @@ a.card {
 
 .card.link {
 	cursor: pointer;
+	text-decoration: none;
 }
 
 .card.link:hover {
 	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+	text-decoration: none;
 }
 
 .card .image {
@@ -99,6 +101,7 @@ a.card {
 	margin-top: 5px;
 	font-family: 'Abril Fatface';
 	margin-bottom: 5px;
+	text-decoration: none;
 }
 
 .card .content .price,
@@ -141,6 +144,7 @@ a.card {
 .card .location i {
 	margin-right: 5px;
 	margin-bottom: 25px;
+	margin-top: 25px;
 }
 
 .card.specs ul > li {

@@ -9,6 +9,7 @@ button,
 	height: 50px;
 	padding: 14px 30px;
 	margin: 8px;
+
 	cursor: pointer;
 	color: #d5aba9;
 	transition: background-color 0.3s, border 0.3s, color 0.3s;
