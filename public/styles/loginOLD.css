@@ -1,0 +1,128 @@
+/* Start form  attributes */
+form {
+	width: 390px;
+	min-height: 500px;
+	height: auto;
+	border-radius: 8px;
+	margin: 2% auto;
+	box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+	padding: 2%;
+	background-image: linear-gradient(-225deg, #f2c57c 50%, #f9a03f 50%);
+}
+/* form Container */
+form .con {
+	display: flex;
+
+	justify-content: space-around;
+
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+
+	margin: 0 auto;
+}
+
+/* the header form form */
+header {
+	margin: 2% auto 10% auto;
+	text-align: center;
+}
+
+.head-form h2 {
+	font-size: 350%;
+	font-family: 'Abril Fatface';
+}
+/* Login title form form */
+/* header h2 {
+	font-size: 250%;
+	font-family: 'Abril Fatface';
+} */
+
+/*  A welcome message or an explanation of the login form */
+header p {
+	letter-spacing: 0.05em;
+}
+
+/* //////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+
+.email {
+	/* background: #fff; */
+	background: #fff;
+	padding: 14.5px 0px 15px 9px;
+	border-radius: 5px 0px 0px 5px;
+}
+
+/* Show/hide password Font Icon */
+/* #eye {
+	background: #fff;
+	color: #333;
+
+	margin: 5.9px 0 0 0;
+	margin-left: -20px;
+	padding: 15px 9px 19px 0px;
+	border-radius: 0px 5px 5px 0px;
+
+	float: right;
+	position: relative;
+	right: 1%;
+	top: -0.2%;
+	z-index: 5;
+
+	cursor: pointer;
+} */
+/* inputs form  */
+
+input[id='txt-input'] {
+	width: 50px;
+}
+/* focus  */
+input:focus {
+	transform: translateX(-2px);
+	border-radius: 5px;
+}
+
+/* //////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+
+input[type='text'] {
+	min-width: 250px;
+}
+/* buttons  */
+button.submits {
+	display: inline-block;
+	color: #333;
+
+	width: 200px;
+	height: 50px;
+
+	padding: 0 20px;
+
+	background: #fff;
+	border-radius: 5px;
+
+	cursor: pointer;
+	text-align: center;
+	transition: all 0.2s linear;
+
+	margin: 7% auto;
+}
+
+/* Submits */
+/* .submits {
+	width: 48%;
+	display: inline-block;
+	float: left;
+	margin-left: 2%;
+} */
+
+/*       Forgot Password button FAF3DD  */
+/* .logs {
+	background: #fff;
+}
+
+/*     Sign Up button  */
+/* .sign-up {
+	background: tomato;
+} */
+
+/* buttons hover Animation */

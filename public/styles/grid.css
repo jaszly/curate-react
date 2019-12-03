@@ -71,3 +71,8 @@ ul.grid.two {
 .grid + h2 {
 	margin-top: 50px;
 }
+
+.grid.images {
+	background-repeat: no-repeat;
+	background-size: cover;
+}

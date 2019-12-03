@@ -42,16 +42,16 @@ h1 {
 	position: relative;
 }
 
-input[type='text'],
+/* input[type='text'],
 select,
 textarea {
 	border: 1px solid #e2e2e2;
-}
+} */
 
 textarea {
 	resize: none;
 }
-
+/* 
 button:focus,
 select:focus,
 input:focus,
@@ -62,8 +62,8 @@ textarea:focus {
 input:focus,
 select:focus,
 textarea:focus {
-	border-color: #00988f;
-}
+	border-color: #fff;
+} */
 
 h3 small {
 	font-size: 15px;
@@ -73,4 +73,11 @@ h3 small {
 
 h2 {
 	margin-top: 0;
+}
+
+h6.subTxt {
+	font-family: 'Montserrat';
+	font-size: 20px;
+	margin-top: 20px;
+	color: #333;
 }
