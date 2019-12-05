@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Button } from 'reactstrap'
 
 class Cards extends React.Component {
 	componentWillMount() {
@@ -37,10 +38,10 @@ class Cards extends React.Component {
 
 						<div>
 							<Link to={`/spaces/${this.props.space._id}`}>
-								<button> Explore This Space</button>{' '}
+								<button className="primary"> Explore Space</button>{' '}
 							</Link>
 							<Link to={`/book/${this.props.space._id}`}>
-								<button>Book</button>
+								<button className="primary">Book</button>
 							</Link>
 						</div>
 					</div>
