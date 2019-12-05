@@ -1,10 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import TopNav from '../layout/nav'
 
 class Login extends React.Component {
+	state = {
+		email: '',
+		password: ''
+	}
+
+	userLogin = e => {}
+
 	render() {
 		return (
 			<>
+				<TopNav />
+
 				<div
 					className="grid center middle tall images"
 					style={{
@@ -24,9 +34,10 @@ class Login extends React.Component {
 								<input
 									className="form-input"
 									id="txt-input"
-									type="text"
+									type="email"
 									placeholder="Email"
 									required
+									onKeyUp="getText(this)"
 								/>
 								<br />
 								<input
@@ -39,13 +50,16 @@ class Login extends React.Component {
 								/>
 							</span>
 							<div className="group">
-								<button className="secondary">Log In</button>
+								<button className="secondary" onClick={e => this.userLogin(e)}>
+									Log In
+								</button>
 								<div className="footer">
-									<button className="secondary">
-										{' '}
-										New to Curate? Signup
-										<i className="fa fa-user-plus" aria-hidden="true" />
-									</button>
+									<Link to="/signup">
+										<button className="secondary">
+											New to Curate? Signup
+											<i className="fa fa-user-plus" aria-hidden="true" />
+										</button>
+									</Link>
 								</div>
 							</div>
 						</form>
