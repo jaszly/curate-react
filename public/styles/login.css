@@ -24,6 +24,7 @@ form {
 	padding: 2%;
 	background-image: linear-gradient(-225deg, #f2c57c 50%, #f9a03f 50%);
 }
+
 /* form Container */
 form .con {
 	display: -webkit-flex;
@@ -128,7 +129,7 @@ button {
 	/* height: 50px; */
 	cursor: pointer;
 	margin-left: 50px;
-
+	margin-top: 10px;
 	text-align: center;
 	transition: all 0.2s linear;
 	width: 340px;
