@@ -1,9 +1,9 @@
-.filters {
+/* .filters {
 	padding: 10px 50px;
 	border-bottom: 1px solid #e2e2e2;
 }
 
-/* .filters button {
+.filters button {
 	height: 33px;
 	font-size: 14px;
 	padding: 7px 12px;
@@ -18,7 +18,7 @@
 	background-color: tomato;
 	border-color: tomato;
 	color: white;
-} */
+}
 
 .filters select {
 	height: 34px;
@@ -37,7 +37,7 @@
 	min-width: 250px;
 }
 
-/* .filters input {
+.filters input {
 	height: 34px;
 	padding: 10px;
 	font-size: 14px;
@@ -46,8 +46,8 @@
 	margin-right: 10px;
 	box-sizing: border-box;
 	vertical-align: top;
-} */
+}
 
 .filters .search input:focus {
 	border-color: #dba3a0;
-}
+} */

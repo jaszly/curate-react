@@ -6,6 +6,10 @@
 	align-items: center;
 }
 
+.card .create {
+	width: 800px;
+}
+
 a.card {
 	text-decoration: none;
 	color: black;
@@ -33,7 +37,7 @@ a.card {
 
 .card.shadow {
 	border: none;
-	/* box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); */
+	box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .card.link {
@@ -98,10 +102,10 @@ a.card {
 
 /* space.title */
 .card .content h2 {
-	font-size: 30px;
+	font-size: 40px;
 	margin-top: 5px;
 	font-family: 'Abril Fatface';
-	margin-bottom: 5px;
+	margin-bottom: 2px;
 	text-decoration: none;
 }
 

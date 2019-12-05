@@ -20,15 +20,19 @@ button:hover,
 
 button.primary,
 .button.primary {
-	background: tomato;
-	padding: 14px 20px;
-	font-size: 16px;
-	border-radius: 4px;
+	background: #f9a03f;
+	font-family: 'Open Sans';
+	text-transform: capitalize;
+	padding: 5px;
+	font-size: 14px;
+	border-radius: 8px;
 	border: none;
 	display: inline-block;
 	text-decoration: none;
 	box-sizing: border-box;
 	vertical-align: top;
+	width: 135px;
+	margin-left: 25px;
 }
 
 button.secondary {
