@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Spaces from './components/layout/spaces'
 import Space from './components/layout/space'
 import Login from './components/auth/login'
+import Signup from './components/auth/signup'
 import Modal from './components/layout/modal'
 
 class App extends React.Component {
@@ -14,6 +15,8 @@ class App extends React.Component {
 					<Route path="/spaces/:id" component={Space} />
 					<Route path="/spaces" component={Spaces} />
 					<Route path="/login" component={Login} />
+					<Route path="/signup" component={Signup} />
+
 					<Route path="/modal" component={Modal} />
 				</Switch>
 			</BrowserRouter>
