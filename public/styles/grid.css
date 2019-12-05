@@ -6,6 +6,39 @@
 	grid-template-columns: 400px;
 	justify-content: center;
 }
+/* signup */
+.grid.wide {
+	grid-template-columns: auto auto;
+	grid-gap: 0px;
+}
+
+.grid.wide h2 {
+	font-size: 60px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.grid.wide > .group {
+	margin-top: 2px;
+}
+/* left side image */
+.grid.wide > .signup-img {
+	text-align: center;
+	font-size: 30px;
+	background-color: #f2c57c;
+	height: 100vh;
+	width: 50vw;
+}
+
+.grid.wide > .signup-form {
+	text-align: center;
+	font-size: 30px;
+	height: 100vh;
+	width: 50vw;
+	background-image: linear-gradient(-225deg, #f2c57c 50%, #f9a03f 50%);
+}
+
+/* end signup */
 
 .grid.sidebar-left {
 	grid-template-columns: 200px auto;
