@@ -19,6 +19,7 @@ button:hover,
 }
 
 button.primary,
+a.primary,
 .button.primary {
 	background: #f9a03f;
 	font-family: 'Open Sans';
@@ -32,10 +33,40 @@ button.primary,
 	box-sizing: border-box;
 	vertical-align: top;
 	width: 135px;
-	margin-left: 25px;
+	color: white;
+	-webkit-appearance: button;
+	/* margin-left: 25px; */
 }
 
-button.secondary {
+@keyframes ani9 {
+	0% {
+		transform: translateY(3px);
+	}
+	100% {
+		transform: translateY(5px);
+	}
+}
+
+a.primary {
+	padding: 15px;
+	transition: all 0.2s linear;
+	text-align: center;
+}
+
+a.primary:hover {
+	animation: ani9 0.4s ease-in-out infinite alternate;
+	text-decoration: none;
+	transform: translatey(3px);
+	box-shadow: none;
+	opacity: 80%;
+	color: #333;
+}
+
+.primary + .primary {
+	margin-left: 20px;
+}
+
+.secondary {
 	background: #f16d56;
 	padding: 14px 20px;
 	font-size: 12px;
@@ -45,7 +76,7 @@ button.secondary {
 	margin-left: 40px;
 }
 
-button.secondary:hover {
+.secondary:hover {
 	background: #fff;
 }
 
