@@ -15,6 +15,7 @@
 /* End body rules */
 
 form {
+	box-sizing: border-box;
 	width: 450px;
 	min-height: 500px;
 	height: auto;
@@ -26,7 +27,7 @@ form {
 }
 
 /* form Container */
-form .con {
+form .con !important {
 	display: -webkit-flex;
 	display: flex;
 
@@ -38,6 +39,10 @@ form .con {
 
 	margin: 0 auto;
 	float: center;
+}
+
+form > .profile !important {
+	background-color: #fff;
 }
 
 /* the header form form */
@@ -115,10 +120,10 @@ input[id='txt-input'] {
 }
 
 /* focus  */
-input:focus {
+/* input:focus {
 	transform: translateX(-2px);
 	border-radius: 5px;
-}
+} */
 
 /* //////////////////////////////////////////// */
 /* //////////////////////////////////////////// */
