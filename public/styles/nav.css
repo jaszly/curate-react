@@ -22,15 +22,16 @@ nav a:hover {
 	}
 }
 
-/* nav {
+ /* nav {
 	padding: 10px 50px;
 	display: grid;
 	grid-template-columns: 60px auto;
 	grid-column-gap: 10px;
 	border-bottom: 1px solid #e2e2e2;
 	overflow: hidden;
-}
+} */
 
+/*
 nav .a {
 	float: left;
 	display: block;
@@ -47,13 +48,13 @@ nav .logo {
 	background-repeat: no-repeat;
 	background-position: center;
 	cursor: pointer;
-}
+/* } */
 
 nav .profile {
 	text-align: right;
 }
 
-nav .profile a {
+nav .profile a !important {
 	border-radius: 3px;
 	font-size: 13px;
 	height: 32px;
