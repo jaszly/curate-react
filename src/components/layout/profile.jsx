@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import axios from 'axios'
+
 import {
 	TabContent,
 	TabPane,
@@ -10,16 +12,47 @@ import {
 	CardTitle,
 	CardText,
 	Row,
-	Col
+	Col,
+	Form,
+	FormGroup,
+	Label,
+	Input,
+	FormText,
+	Jumbotron
 } from 'reactstrap'
 
 import classnames from 'classnames'
+import TopNav from './nav'
 
 // const Profile = props => {
 class Profile extends React.Component {
+	componentWillMount() {
+		axios
+			.get('http://localhost:4000/auth', {
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem('token')}`
+				}
+			})
+			.then(res => {
+				console.log('RESSSS', res)
+				console.log({ profile: res.data })
+				this.setState({
+					profile: res.data
+				})
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}
+
 	// const [activeTab, setActiveTab] = useState('1')
 	state = {
-		activeTab: '1'
+		activeTab: '1',
+		profile: {
+			name: '',
+			email: '',
+			avatar: ''
+		}
 	}
 
 	setActiveTab = tab => {
@@ -37,6 +70,7 @@ class Profile extends React.Component {
 	render() {
 		return (
 			<div>
+				<TopNav />
 				<Nav tabs>
 					<NavItem>
 						<NavLink
@@ -67,34 +101,47 @@ class Profile extends React.Component {
 									<div>
 										<div>
 											<h1 style={{ fontFamily: 'Montserrat:300' }}>
-												Hi, My Name is user.name
+												Hi, I'm {this.state.profile.name}
 											</h1>
-											<form>
-												<div className="group">
-													<label>Name</label>
-													<input type="text" />
-												</div>
-												<div className="group">
-													<label>Email</label>
-													<input type="email" />
-												</div>
-												<div className="group">
-													<label>Location</label>
-													<input type="text" />
-												</div>
-												<div className="group">
-													<label>Profile Picture</label>
-													<div className="user">
-														<div className="avatar" />
-														<div className="name">
-															<input type="file" />
-														</div>
-													</div>
-												</div>
-												<button>Save Changes</button>
-											</form>
-											<hr />
-											<button className="secondary">Logout</button>
+											<div className="profile">
+												<FormGroup>
+													<Label for="examplename">Name</Label>
+													<Input
+														type="text"
+														name="name"
+														id="exampleName"
+														value={this.state.profile.name}
+													/>
+												</FormGroup>
+												<FormGroup>
+													<Label for="exampleEmail">Email</Label>
+													<Input
+														type="email"
+														name="email"
+														id="exampleEmail"
+														value={this.state.profile.email}
+													/>
+												</FormGroup>
+												<FormGroup>
+													<Label for="examplePassword">Password</Label>
+													<Input
+														type="password"
+														name="password"
+														id="examplePassword"
+														placeholder="password placeholder"
+													/>
+												</FormGroup>
+												<FormGroup>
+													<Label for="exampleFile">
+														Change Profile Picture
+													</Label>
+													<Input type="file" name="file" id="exampleFile" />
+													<FormText color="muted">
+														This is some placeholder block-level help text
+													</FormText>
+												</FormGroup>
+											</div>
+											<button className="primary">Save Changes</button>
 										</div>
 									</div>
 								</div>
