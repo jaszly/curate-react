@@ -20,16 +20,20 @@ class Login extends React.Component {
 		axios
 			.post('http://localhost:4000/login', this.state.user)
 			.then(res => {
+				console.log('data comes back')
 				console.log(res)
 				this.setState(this.state.user)
 				if (!res.data.token) {
+					console.log('what is wrong')
 					alert('please try again')
 				} else {
+					console.log('this is good')
 					localStorage.setItem('token', res.data.token)
-					this.props.history.push('/')
+					this.props.history.push('/spaces')
 				}
 			})
 			.catch(err => {
+				console.log('no')
 				console.log(err)
 			})
 	}
