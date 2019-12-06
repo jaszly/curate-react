@@ -1,14 +1,38 @@
 import React from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 import TopNav from '../layout/nav'
 
 class Login extends React.Component {
 	state = {
-		email: '',
-		password: ''
+		user: {}
 	}
 
-	userLogin = e => {}
+	changeField = (e, field) => {
+		let user = this.state.user
+		user[field] = e.target.value
+		this.setState({ user })
+		console.log({ user })
+	}
+
+	userLogin = e => {
+		e.preventDefault()
+		axios
+			.post('http://localhost:4000/login', this.state.user)
+			.then(res => {
+				console.log(res)
+				this.setState(this.state.user)
+				if (!res.data.token) {
+					alert('please try again')
+				} else {
+					localStorage.setItem('token', res.data.token)
+					this.props.history.push('/')
+				}
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}
 
 	render() {
 		return (
@@ -37,7 +61,8 @@ class Login extends React.Component {
 									type="email"
 									placeholder="Email"
 									required
-									onKeyUp="getText(this)"
+									value={this.state.email}
+									onChange={e => this.changeField(e, 'email')}
 								/>
 								<br />
 								<input
@@ -47,6 +72,8 @@ class Login extends React.Component {
 									id="pwd"
 									name="password"
 									required
+									value={this.state.password}
+									onChange={e => this.changeField(e, 'password')}
 								/>
 							</span>
 							<div className="group">
