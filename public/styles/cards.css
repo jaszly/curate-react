@@ -1,6 +1,6 @@
 .card {
 	border: 1px solid #e2e2e2;
-	width: 400px;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -101,7 +101,7 @@ a.card {
 }
 
 /* space.title */
-.card .content h2 {
+CardBody .h2 {
 	font-size: 40px;
 	margin-top: 5px;
 	font-family: 'Abril Fatface';
