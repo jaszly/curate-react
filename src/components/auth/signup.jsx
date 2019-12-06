@@ -4,10 +4,7 @@ import axios from 'axios'
 
 class Signup extends React.Component {
 	state = {
-		name: '',
-		email: '',
-		password: '',
-		password2: ''
+		user: { name: '', email: '', password: '', password2: '' }
 	}
 
 	//signup user and get token
@@ -19,28 +16,20 @@ class Signup extends React.Component {
 		console.log(user)
 	}
 
-	addFile = e => {
-		let user = this.state.user
-		user.file = e.target.files[0]
-		this.setState({ user })
-	}
-
 	signup = e => {
 		e.preventDefault()
-		let data = new FormData()
-		for (let key in this.state.user) {
-			data.append(key, this.state.user[key])
-		}
-
 		axios
-			.post('http://localhost:4000/signup', data)
+			.post('http://localhost:4000/signup', this.state.user)
 			.then(res => {
-				localStorage.setItem('token', res.data)
-				this.props.history.push('/places')
+				console.log(res)
+				if (res.data.token) {
+					localStorage.setItem('token', res.data.token)
+					this.props.history.push('/')
+				} else {
+					alert('email adress already in use')
+				}
 			})
-			.catch(err => {
-				console.log(err)
-			})
+			.catch(err => console.log(err))
 	}
 
 	render() {
@@ -54,7 +43,7 @@ class Signup extends React.Component {
 								'url("https://i.ibb.co/R7y2fvH/filios-sazeides-6qbtnk-Grf-U-unsplash.jpg")'
 						}}
 					></div>
-					<div className="grid signup-form tall">
+					<form className="grid signup-form " onSubmit={this.signup}>
 						<header>
 							<h2>Create an Account</h2>
 							<h2>on Curate</h2>
@@ -65,37 +54,50 @@ class Signup extends React.Component {
 								id="txt-input"
 								type="text"
 								placeholder="Name"
+								value={this.state.user.name}
 								required
-								onKeyUp="getText(this)"
+								onChange={e => this.changeInput(e, 'name')}
 							/>
 							<input
 								className="form-input"
 								id="txt-input"
 								type="email"
 								placeholder="Email"
+								value={this.state.user.email}
 								required
-								onKeyUp="getText(this)"
+								onChange={e => this.changeInput(e, 'email')}
 							/>
 							<br />
 							<input
 								className="form-input"
 								type="password"
 								placeholder="Password"
+								value={this.state.user.password}
 								id="pwd"
 								name="password"
 								required
+								onChange={e => this.changeInput(e, 'password')}
 							/>
 							<input
 								className="form-input"
 								type="password"
 								placeholder="Confirm Password"
+								value={this.state.user.password2}
 								id="pwd"
 								name="password"
 								required
+								onChange={e => this.changeInput(e, 'password2')}
 							/>
 						</span>
 						<div className="group">
-							<button className="secondary">Signup </button>
+							<button
+								className="secondary"
+								onClick={e => this.signup(e, this.state.user)}
+							>
+								{' '}
+								Signup{' '}
+							</button>
+
 							<div className="footer">
 								<Link to="/login">
 									<button className="secondary">
@@ -105,7 +107,7 @@ class Signup extends React.Component {
 								</Link>
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</>
 		)
