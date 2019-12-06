@@ -2,11 +2,12 @@ import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import axios from 'axios'
 
-class Search extends React.Component {
+export default class Search extends React.Component {
 	state = {
 		initialSpaces: [],
 		spaces: []
 	}
+
 	filterSpaces = event => {
 		let spaces = this.state.initialSpaces
 		spaces = spaces.filter(space => {
@@ -25,6 +26,13 @@ class Search extends React.Component {
 	render() {
 		return (
 			<div>
+				<form>
+					<input
+						type="text"
+						spaceholder="Search"
+						onChange={this.filterSpaces}
+					/>
+				</form>
 				<div>
 					{this.state.spaces.map(space => {
 						return <div key={space}>{space} </div>
@@ -34,5 +42,3 @@ class Search extends React.Component {
 		)
 	}
 }
-
-export default Search
