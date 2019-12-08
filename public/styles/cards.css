@@ -1,6 +1,6 @@
 .card {
 	border: 1px solid #e2e2e2;
-	width: 100%;
+	width: 90%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -16,6 +16,10 @@ a.card {
 	display: inline-block;
 }
 
+p.card-text {
+	margin-top: 1rem;
+}
+
 .card .logo {
 	width: 100px;
 	height: 34px;
@@ -27,12 +31,20 @@ a.card {
 }
 
 .card > .content {
-	padding: 20px;
+	padding: 5px;
 	margin: 0;
 }
 
+.card-body {
+	padding: 25rem;
+	font-style: 100px;
+}
+
+/* CardBody span {
+	font-style: 100px;
+} */
 .card > .content.large {
-	padding: 40px;
+	padding: 10px;
 }
 
 .card.shadow {
@@ -45,14 +57,13 @@ a.card {
 	text-decoration: none;
 }
 
-.card.link:hover {
+card :hover {
 	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-	text-decoration: none;
 }
 
 .card .image {
 	border-radius: 6px 6px 0 0;
-	height: 300px;
+	height: 211px;
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -84,7 +95,7 @@ a.card {
 .card .content small.meta {
 	color: #5e5e5e;
 	font-family: 'Open Sans';
-	font-size: 11px;
+	/* font-size: 11px; */
 	font-weight: bold;
 }
 
@@ -96,21 +107,20 @@ a.card {
 .card .content small.location i + span {
 	margin-left: 0;
 	font-family: 'Open Sans';
-	font-size: 15px;
+	font-weight: 100;
 	color: #5e5e5e;
 }
 
-/* space.title */
-CardBody .h2 {
-	font-size: 40px;
-	margin-top: 5px;
-	font-family: 'Abril Fatface';
-	margin-bottom: 2px;
-	text-decoration: none;
+div .small,
+small {
+	font-size: 114%;
+	font-weight: 100;
 }
 
+/* space.title */
+
 .card .content .price,
-.card .content .rating {
+.card .rating {
 	font-size: 15px;
 	font-family: 'Open Sans';
 	color: #8a8a8a;
@@ -136,13 +146,16 @@ CardBody .h2 {
 .card .location {
 	color: #8a8a8a;
 	display: block;
-	font-size: 20px;
+	/* font-size: 20px; */
 	margin-top: 10px;
 	border-bottom: 1px solid #e2e2e2;
-	text-transform: capitalize;
+	text-transform: uppercase;
+	margin-top: 10rem;
 }
 /*this.city */
 .card .location .city {
+	font-family: 'Lato';
+	font-size: 1em;
 	text-transform: uppercase;
 }
 /* margin bottom- divider line */
@@ -150,6 +163,8 @@ CardBody .h2 {
 	margin-right: 5px;
 	margin-bottom: 25px;
 	margin-top: 25px;
+	font-size: 0.6em;
+	text-transform: uppercase;
 }
 
 .card.specs ul > li {

@@ -28,23 +28,23 @@ class Cards extends React.Component {
 						<CardImg
 							className="image"
 							top
-							width="100%"
+							width="100"
 							src="/assets/256x186.svg"
 							style={{ backgroundImage: `url('${this.props.space.image}')` }}
 						/>
 						<CardBody>
-							<h2 style={{ fontFamily: 'Abril Fatface' }}>
+							<span className="title" style={{ fontFamily: 'Abril Fatface' }}>
 								{this.props.space.title}
-							</h2>
+							</span>
 
 							<CardSubtitle className="content">
 								${this.props.space.price} / hour
 							</CardSubtitle>
 							<CardText>
-								<small className="location">
+								<small className="small">
 									<i className="fas fa-map-pin" />
 
-									<span>
+									<span className="city">
 										{this.props.space.neighborhood}{' '}
 										<span className="city"> | {this.props.space.city}</span>
 									</span>
@@ -52,9 +52,6 @@ class Cards extends React.Component {
 							</CardText>
 							<Link to={`/spaces/${this.props.space._id}`} className="primary">
 								Explore Space
-							</Link>
-							<Link to={`/book/${this.props.space._id}`} className="primary">
-								Book
 							</Link>
 						</CardBody>
 					</Card>
