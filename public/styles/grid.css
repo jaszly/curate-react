@@ -58,6 +58,10 @@
 	grid-column-gap: 30px;
 	grid-row-gap: 30px;
 }
+.grid.two li {
+	text-decoration: none;
+	list-style: none;
+}
 
 .grid .five {
 	grid-template-columns: auto auto auto auto auto;
