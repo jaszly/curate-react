@@ -13,9 +13,9 @@ button,
 	transition: background-color 0.3s, border 0.3s, color 0.3s;
 }
 
-button:hover,
+button.primary:hover,
 .button:hover {
-	background: #fff;
+	color: white;
 }
 
 button.primary,
@@ -37,6 +37,22 @@ a.primary,
 	/* margin-left: 25px; */
 }
 
+button.primary.bookme {
+	margin-top: 1px;
+}
+
+@keyframes ani9 {
+	0% {
+		transform: translateY(3px);
+	}
+	100% {
+		transform: translateY(5px);
+	}
+}
+
+.bounce {
+	border-bottom: 1px;
+}
 @keyframes ani9 {
 	0% {
 		transform: translateY(3px);
@@ -58,7 +74,6 @@ a.primary:hover {
 	transform: translatey(3px);
 	box-shadow: none;
 	opacity: 80%;
-	color: #fff;
 }
 
 .primary + .primary {
@@ -67,6 +82,7 @@ a.primary:hover {
 
 .secondary {
 	background: #f16d56;
+	/* background: #516b4b; */
 	padding: 14px 20px;
 	font-size: 12px;
 	border: none;
@@ -80,8 +96,10 @@ a.primary:hover {
 }
 
 button.small {
-	height: 34px;
-	padding: 4px 15px;
+	padding: 4px;
+	width: fit-content;
+	background-color: inherit;
+	outline-color: none;
 }
 
 button.cancel,
