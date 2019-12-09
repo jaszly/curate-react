@@ -20,9 +20,10 @@ class App extends React.Component {
 					<Route path="/profile" component={Profile} />
 					<Route path="/login" component={Login} />
 					<Route path="/signup" component={Signup} />
+					<Route path="/list-your-space" component={List} />
+
 					<Route path="/modal" component={Modal} />
 					<Route path="/" component={Home} />
-					<Route path="/list-your-space" component={List} />
 				</Switch>
 			</BrowserRouter>
 		)
