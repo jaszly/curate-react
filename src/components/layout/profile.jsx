@@ -18,7 +18,8 @@ import {
 	Label,
 	Input,
 	FormText,
-	Jumbotron
+	Jumbotron,
+	Media
 } from 'reactstrap'
 
 import classnames from 'classnames'
@@ -100,48 +101,58 @@ class Profile extends React.Component {
 								<div>
 									<div>
 										<div>
-											<h1 style={{ fontFamily: 'Montserrat:300' }}>
-												Hi, I'm {this.state.profile.name}
-											</h1>
-											<div className="profile">
-												<FormGroup>
-													<Label for="examplename">Name</Label>
-													<Input
-														type="text"
-														name="name"
-														id="exampleName"
-														value={this.state.profile.name}
-													/>
-												</FormGroup>
-												<FormGroup>
-													<Label for="exampleEmail">Email</Label>
-													<Input
-														type="email"
-														name="email"
-														id="exampleEmail"
-														value={this.state.profile.email}
-													/>
-												</FormGroup>
-												<FormGroup>
-													<Label for="examplePassword">Password</Label>
-													<Input
-														type="password"
-														name="password"
-														id="examplePassword"
-														placeholder="password placeholder"
-													/>
-												</FormGroup>
-												<FormGroup>
-													<Label for="exampleFile">
-														Change Profile Picture
-													</Label>
-													<Input type="file" name="file" id="exampleFile" />
-													<FormText color="muted">
-														This is some placeholder block-level help text
-													</FormText>
-												</FormGroup>
-											</div>
-											<button className="primary">Save Changes</button>
+											<Jumbotron>
+												<h1 style={{ fontFamily: 'Montserrat:100' }}>
+													Edit My Profile
+												</h1>
+
+												<Media left href="#">
+													<Media object data-src={this.state.profile.avatar} />
+												</Media>
+												<Media body>
+													<Media heading></Media>
+												</Media>
+
+												<div className="profile">
+													<FormGroup>
+														<Label for="examplename">Name</Label>
+														<Input
+															type="text"
+															name="name"
+															id="exampleName"
+															value={this.state.profile.name}
+														/>
+													</FormGroup>
+													<FormGroup>
+														<Label for="exampleEmail">Email</Label>
+														<Input
+															type="email"
+															name="email"
+															id="exampleEmail"
+															value={this.state.profile.email}
+														/>
+													</FormGroup>
+													<FormGroup>
+														<Label for="examplePassword">Password</Label>
+														<Input
+															type="password"
+															name="password"
+															id="examplePassword"
+															placeholder="password placeholder"
+														/>
+													</FormGroup>
+													<FormGroup>
+														<Label for="exampleFile">
+															Change Profile Picture
+														</Label>
+														<Input type="file" name="file" id="exampleFile" />
+														<FormText color="muted">
+															This is some placeholder block-level help text
+														</FormText>
+													</FormGroup>
+												</div>
+												<button className="primary">Save Changes</button>
+											</Jumbotron>
 										</div>
 									</div>
 								</div>
