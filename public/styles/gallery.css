@@ -1,15 +1,5 @@
-.gallery {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	border-bottom: 1px solid #e2e2e2;
-}
-
-.gallery .image-main {
-	height: 500px;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
+div.jumbotron {
+	background-color: #fff;
 }
 
 .gallery .image-main button {
@@ -32,12 +22,12 @@
 	color: white;
 }
 
-.gallery .cardss {
-	padding: 50px;
+.gallery .cards {
+	padding: 5px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 50px;
-	grid-row-gap: 30px;
+	/* grid-row-gap: 30px; */
 }
 
 .gallery .cards {
@@ -72,11 +62,11 @@
 }
 
 /* Clear floats after the columns */
-.row:after {
+/* .row:after {
 	content: '';
 	display: table;
 	clear: both;
-}
+} */
 
 /* The expanding image container (positioning is needed to position the close button and the text) */
 .container {
@@ -101,4 +91,51 @@
 	color: white;
 	font-size: 35px;
 	cursor: pointer;
+}
+
+/* //space gallery  */
+.gallery {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+/* main largeImage */
+.gallery .image-main {
+	height: 500px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: relative;
+}
+
+.gallery .thumbnails {
+	padding: 15px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+
+	/* width: 50vw; */
+}
+
+.display-3 {
+	border-bottom: 1px solid #e2e2e2;
+}
+p.lead {
+	border-bottom: none;
+}
+
+.gallery .thumbnail {
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+	transition: opacity 0.3s;
+}
+
+.gallery .thumbnail:hover,
+.gallery .thumbnail.selected {
+	opacity: 0.5;
 }
