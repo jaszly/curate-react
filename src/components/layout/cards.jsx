@@ -29,7 +29,6 @@ class Cards extends React.Component {
 							className="image"
 							top
 							width="100"
-							src="/assets/256x186.svg"
 							style={{ backgroundImage: `url('${this.props.space.image}')` }}
 						/>
 						<CardBody>
@@ -42,15 +41,25 @@ class Cards extends React.Component {
 							</CardSubtitle>
 							<CardText>
 								<small className="small">
-									<i className="fas fa-map-pin" />
+									<i
+										className="fas fa-map-marker-alt"
+										style={{ color: '#f9a03f', marginRight: '2px' }}
+									/>
 
 									<span className="city">
-										{this.props.space.neighborhood}{' '}
+										{this.props.space.neighborhood}
 										<span className="city"> | {this.props.space.city}</span>
 									</span>
 								</small>
 							</CardText>
-							<Link to={`/spaces/${this.props.space._id}`} className="primary">
+							<Link
+								to={`/spaces/${this.props.space._id}`}
+								className="primary"
+								style={{
+									fontFamily: 'Lato',
+									fontSize: '1rem'
+								}}
+							>
 								Explore Space
 							</Link>
 						</CardBody>
