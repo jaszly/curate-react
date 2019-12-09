@@ -1,19 +1,27 @@
 import React from 'react'
 import TopNav from './nav.jsx'
 import axios from 'axios'
+import {
+	Jumbotron,
+	Button,
+	Form,
+	FormGroup,
+	Label,
+	Input,
+	FormText
+} from 'reactstrap'
 
 class List extends React.Component {
 	state = {
+		features: [],
 		listing: {
 			title: '',
 			description: '',
 			city: '',
-			country: '',
+			neighborhood: '',
 			price: null,
-			types: [],
 			images: [],
-			features: [],
-			guests: []
+			features: []
 		}
 	}
 
@@ -22,157 +30,158 @@ class List extends React.Component {
 		let listing = this.state.listing
 		listing[fieldName] = e.target.value
 		this.setState({ listing })
+		console.log({ listing })
 	}
 
 	createListing = e => {
 		e.preventDefault()
+		console.log('about to submit')
 		axios
-			.post('/localhost:4000/spaces', this.state.listing)
+			.post('http://localhost:4000/spaces', this.state.listing, {
+				headers: {
+					Authorization: `Bearer ${localStorage.getItem('token')}`
+				}
+			})
 			.then(res => {
 				console.log({ res })
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
-
-	componentWillMount() {
-		let listing = this.state.listing
-		axios
-			.get('/localhost:4000/spaces/features')
-			.then(res => {
-				listing.features = res.data
-				this.setState({ listing })
-			})
-			.catch(err => {
-				console.log(err)
-			})
-
-		let type = this.state.type
-		axios
-			.get('/localhost:4000/spaces/types')
-			.then(res => {
-				listing.types = res.data
-				this.setState({ type })
 			})
 			.catch(err => {
 				console.log({ err })
 			})
 	}
 
+	featureToggle = (e, feature) => {
+		let listing = this.state.listing
+		if (!this.state.listing.features.includes(feature)) {
+			listing.features.push(feature)
+			this.setState({ listing: listing })
+		} else {
+			// let listing = this.state.listing
+			// let listing2 = this.state.listing
+			// let i = listing.features.indexOf(e.target.value)
+			// listing.features.splice(i)
+			// this.setState({ listing: listing2 })
+			listing.features = listing.features.filter(listingFeature => {
+				return listingFeature._id != feature._id
+			})
+			this.setState({ listing: listing })
+		}
+	}
+	// 	if(this.state.feature !== this.state.listing.feature) {
+	// 		feature = this.state.feature
+	// 	} else {
+	//
+	// 	}
+	// }
+
+	componentWillMount() {
+		let listing = this.state.listing
+		axios
+			.get('http://localhost:4000/features')
+			.then(res => {
+				console.log({ res })
+				this.setState({ features: res.data })
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}
+
 	render() {
 		return (
 			<>
-				<TopNav />
-				<div className="grid medium">
-					<div className="grid sidebar-left">
-						<div className="sidebar">
-							<ul>
-								<li className>
-									<a href="profile">Profile</a>
-								</li>
-								<li className>
-									<a href="bookings">Bookings</a>
-								</li>
-								<li className>
-									<a href="favorites">Favorites</a>
-								</li>
-								<li className="active">
-									<a href="host">Host</a>
-								</li>
-							</ul>
+				<TopNav history={this.props.history} />
+				<Jumbotron>
+					<Form onSubmit={e => this.createListing(e)}>
+						<FormGroup>
+							<h1 className="display-3">List Your Space</h1>
+							<p className="lead">the Basics</p>
+							<Label for="exampleText">Title of Your Space</Label>
+							<Input
+								type="textarea"
+								name="text"
+								id="exampleText"
+								placeholder="with a placeholder"
+								value={this.state.listing.title}
+								onChange={e => this.changeInput(e, 'title')}
+							/>
+						</FormGroup>
+						<FormGroup>
+							<Label for="Text">Description for your Space</Label>
+							<Input
+								type="textarea"
+								name="text"
+								id="exampleText"
+								value={this.state.listing.description}
+								onChange={e => this.changeInput(e, 'description')}
+							/>
+						</FormGroup>
+						<FormGroup>
+							<Label for="exampleSelect">Where is your space located?</Label>
+							<Input
+								type="select"
+								name="select"
+								id="exampleSelect"
+								value={this.state.listing.city}
+								onChange={e => this.changeInput(e, 'city')}
+							>
+								<option>San Francisco Bay Area</option>
+								<option>Greater Los Angeles</option>
+								<option>Coachella Valley</option>
+								<option>New York City</option>
+								<option>Miami Beach</option>
+								<option>Metro Atlanta Area</option>
+								<option>City Not Listed</option>
+							</Input>
+						</FormGroup>
+
+						<FormGroup>
+							<Label for="Text">What neighborhood is your space in?</Label>
+							<Input
+								type="textarea"
+								name="text"
+								id="exampleText"
+								value={this.state.listing.neighborhood}
+								onChange={e => this.changeInput(e, 'neighborhood')}
+							/>
+						</FormGroup>
+
+						<p className="lead">the Logistics</p>
+						<FormGroup>
+							<Label for="Text">How much per hour is your space? (USD)</Label>
+							<Input
+								type="number"
+								id="exampleText"
+								value={this.state.listing.price}
+								onChange={e => this.changeInput(e, 'price')}
+							/>
+						</FormGroup>
+						{'What features will you offer users who book your space?'}
+
+						{this.state.features.map(feature => (
+							<FormGroup check>
+								<Label check>
+									<Input
+										type="checkbox"
+										onChange={e => this.featureToggle(e, feature)}
+									/>
+									<i className={feature.icon}></i> {feature.description}
+								</Label>
+							</FormGroup>
+						))}
+						<div>
+							<Button
+								className="primary"
+								style={{ width: '200px', marginTop: '40px ' }}
+							>
+								Submit for approval
+							</Button>
 						</div>
-						<div className="content">
-							<h2>Add a Listing </h2>
-							<form>
-								<div className="group">
-									<label>Title</label>
-									<input
-										type="text"
-										value={this.state.listing.title}
-										onChange={e => this.changeInput(e, 'title')}
-									/>
-								</div>
-								<div className="group">
-									<label>Description</label>
-									<textarea />
-								</div>
-								<div className="group">
-									<label>City or Town</label>
-									<input
-										type="text"
-										value={this.state.listing.city}
-										onChange={e => this.changeInput(e, 'city')}
-									/>
-								</div>
-								<div className="group">
-									<label>Country</label>
-									<input
-										type="text"
-										value={this.state.listing.country}
-										onChange={e => this.changeInput(e, 'country')}
-									/>
-								</div>
-								<div className="group">
-									<label>Price per Night (USD)</label>
-									<input
-										type="number"
-										value={this.state.listing.price}
-										onChange={e => this.changeInput(e, 'price')}
-									/>
-								</div>
-								<div className="group">
-									<label>Type</label>
-									<select>
-										{this.state.listing.types.map((types, i) => (
-											<option key={i}>{types.name}</option>
-										))}
-									</select>
-								</div>
-								<div className="group">
-									<label>Number of Rooms</label>
-									<input
-										type="number"
-										min="1"
-										value={this.state.listing.bedrooms}
-										onChange={e => this.changeInput(e, 'bedrooms')}
-									/>
-								</div>
-								<div className="group">
-									<label>Number of Bathrooms</label>
-									<input
-										type="number"
-										min="1"
-										value={this.state.listing.bathrooms}
-										onChange={e => this.changeInput(e, 'bathrooms')}
-									/>
-								</div>
-								<div className="group"></div>
-								<div className="group">
-									<label>Upload Photos</label>
-									<input type="file" multiple />
-								</div>
-								<div className="group">
-									<label>Amenities</label>
-									{this.state.listing.features.map(amenity => (
-										<label className="checkbox">
-											<input type="checkbox" />
-											{amenity.name}
-										</label>
-									))}
-								</div>
-								<button className="primary">Publish this Space</button>
-								<button className="cancel" onClick="/host">
-									<i className="fas fa-times" />
-								</button>
-							</form>
-						</div>
-					</div>
-				</div>
-				;
+					</Form>
+				</Jumbotron>
 			</>
 		)
 	}
-} //react component {}
+}
 
 export default List
