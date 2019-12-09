@@ -9,6 +9,7 @@ p {
 	color: #4f4f4f;
 	font-size: 17px;
 	line-height: 1.5em;
+	margin-top: 1rem;
 }
 
 p + h3 {
@@ -51,7 +52,7 @@ textarea {
 textarea {
 	resize: none;
 }
-/* 
+/*
 button:focus,
 select:focus,
 input:focus,
