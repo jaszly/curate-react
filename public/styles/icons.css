@@ -16,3 +16,7 @@ small i + span {
 }
 
 /* change pin location color here */
+.fas fa-map-marker-alt {
+	color: #f9a03f;
+	margin-right: 5px;
+}
