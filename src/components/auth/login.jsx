@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import TopNav from '../layout/nav'
+import { Navbar, NavbarBrand, Nav } from 'reactstrap'
 
 class Login extends React.Component {
 	state = {
@@ -41,8 +41,21 @@ class Login extends React.Component {
 	render() {
 		return (
 			<>
-				<TopNav />
-
+				<Navbar color="light" expand="md" style={{ height: '60px' }}>
+					<NavbarBrand href="/" style={{ fontSize: '30px' }}>
+						curate
+					</NavbarBrand>
+					<NavbarBrand
+						style={{
+							color: '#fff',
+							fontSize: '15px',
+							fontFamily: 'Montserrat',
+							paddingTop: '8px'
+						}}
+					>
+						Stylish Spaces for Content Creators{' '}
+					</NavbarBrand>
+				</Navbar>
 				<div
 					className="grid center middle tall images"
 					style={{
@@ -51,7 +64,7 @@ class Login extends React.Component {
 					}}
 				>
 					<div>
-						<form>
+						<form className="form">
 							<header className="head-form ">
 								<br />
 								<h2>Welcome to Curate</h2>
