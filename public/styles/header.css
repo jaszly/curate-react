@@ -1,22 +1,99 @@
-.hero {
+.hero-img {
 	width: 100vw;
-	height: 100vh;
+	height: 80vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	color: white;
-	background-image: url('https://i.ibb.co/DYsr5NG/tanya-santos-p3-Xp-CE4-NYTg-unsplash.jpg');
+	background-image: url('https://i.ibb.co/xhndGQC/filios-sazeides-6qbtnk-Grf-U-unsplash.jpg');
+	/* opacity: 88%; */
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	position: relative;
+}
+
+/* //search */
+
+input.ctnr-search {
+	margin-top: 36px;
+	outline: none;
+	background: none;
+	border: 0;
+	font-family: 'Lato';
+	padding-right: 5px;
+	background-color: white;
+	opacity: 80%;
+	background-position: 'center';
+}
+
+input.ctnr-search: focus {
+	width: 100%;
+	transition-delay: 0.4s, 0s, 0.4s;
+	outline: 0;
+	border-radius: 0;
+	cursor: text;
+	color: tomato;
 }
 /*
 .hero .button {
 	color: #dba3a0;
 } */
 
-.logo {
+/* .logo {
 	background-image: url('https://i.ibb.co/kyHGqYL/Curate.jpg');
+} */
+
+/* header image on homepage */
+.bg-img {
+	width: 100vw;
+	height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+	background-image: url('https://i.ibb.co/6HbfS0j/tanya-santos-p3-Xp-CE4-NYTg-unsplash.jpg');
+	min-height: 380px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+/* text on header images */
+.ctnr {
+	position: absolute;
+	margin: 50px 50px 1px 50px;
+	padding: 230px;
+	z-index: 5px;
+	background-position: center;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+}
+
+.ctnr.box {
+	box-sizing: border-box;
+	background-color: black;
+	border-radius: 8px;
+	margin: 0px;
+	padding: 82px;
+	opacity: 70%;
+}
+.btn {
+	background-color: tomato;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+.btn:hover {
+	opacity: 1;
 }
