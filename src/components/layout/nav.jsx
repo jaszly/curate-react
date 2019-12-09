@@ -33,6 +33,12 @@ class TopNav extends React.Component {
 		this.setIsOpen(!this.isOpen)
 	}
 
+	logout = e => {
+		e.preventDefault()
+		localStorage.removeItem('token')
+		this.props.history.push('/login')
+	}
+
 	componentDidMount() {
 		axios
 			.get('http://localhost:4000/auth', {
@@ -51,6 +57,13 @@ class TopNav extends React.Component {
 				console.log(err)
 			})
 	}
+	checkToken = () => {
+		if (localStorage.getItem('token')) {
+			return true
+		} else {
+			return false
+		}
+	}
 	render() {
 		return (
 			<div>
@@ -59,17 +72,22 @@ class TopNav extends React.Component {
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.isOpen} navbar>
 						<Nav className="mr-auto" navbar>
-							<NavItem>
-								<NavLink href="/login">Login</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink href="/signup">List Your Space </NavLink>
-							</NavItem>
+							{this.checkToken() ? (
+								<NavItem>
+									<NavLink href="/list-your-space">List Your Space </NavLink>
+								</NavItem>
+							) : (
+								<NavItem>
+									<NavLink href="/login">List Your Space </NavLink>
+								</NavItem>
+							)}
 							<UncontrolledDropdown nav inNavbar>
 								<DropdownToggle nav caret>
 									Cities We're In
 								</DropdownToggle>
 								<DropdownMenu right>
+									<DropdownItem href="/spaces">View All Spaces</DropdownItem>
+									<DropdownItem divider />
 									<DropdownItem
 										onClick={e =>
 											this.props.filterFunction(e, 'San Francisco Bay Area')
@@ -90,20 +108,22 @@ class TopNav extends React.Component {
 								</DropdownMenu>
 							</UncontrolledDropdown>
 						</Nav>
-
-						<input type="text" placeholder="Search" />
+						{this.checkToken() ? (
+							<UncontrolledDropdown nav inNavbar>
+								<DropdownToggle nav caret>
+									Profile
+								</DropdownToggle>
+								<DropdownMenu right>
+									<DropdownItem href="/profile">View My Profile</DropdownItem>
+									<DropdownItem onClick={this.logout}>Logout</DropdownItem>
+								</DropdownMenu>
+							</UncontrolledDropdown>
+						) : (
+							<NavItem>
+								<NavLink href="/login">Login</NavLink>
+							</NavItem>
+						)}
 					</Collapse>
-					<div className="profile">
-						<div
-							className="avatar"
-							style={{
-								backgroundImage: `url('${this.state.user.avatar}')`
-							}}
-						></div>
-						<a href="profile" className="button primary">
-							<span>{this.state.user.name}</span>
-						</a>
-					</div>
 				</Navbar>
 			</div>
 		)
