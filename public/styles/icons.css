@@ -1,22 +1,31 @@
 i {
-	/* this color to match coral buttons */
+	color: #f9a03f;
 }
 
 .fa-heart.fas {
 	color: tomato;
 }
 
-.fa-star,
-.fa-map-marker-alt {
-	color: #00988f;
-}
+/* .fa-star,
+.fa-map-marker-alt, .fa-wifi, .fa-sun, .fa-road, .fa-concierge-bell, .fa-car {
+	color: #f9a03f;
+} */
 
 small i + span {
 	margin-left: 10px;
 }
 
-/* change pin location color here */
-.fas fa-map-marker-alt {
-	color: #f9a03f;
-	margin-right: 5px;
+p.spectags {
+	display: inline-block;
+	height: auto;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	padding: 3px 25px 4px;
+	border-style: solid;
+	border-width: 0.5px;
+	border-color: rgba(34, 34, 34, 0.2);
+	border-radius: 25px;
+	background-color: rgba(236, 244, 247, 0);
 }
+
+/* change pin location color here */

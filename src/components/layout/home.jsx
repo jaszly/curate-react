@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import TopNav from './nav'
-
 import Filters from './filters'
 
 class Home extends React.Component {

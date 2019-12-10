@@ -14,7 +14,7 @@
 
 /* End body rules */
 
-form {
+.form {
 	box-sizing: border-box;
 	width: 450px;
 	min-height: 500px;

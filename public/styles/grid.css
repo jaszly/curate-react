@@ -43,6 +43,36 @@
 
 /* end signup */
 
+/* booking page  */
+
+/* left side image */
+
+.bp-grid {
+	grid-template-columns: 70% 30%;
+	grid-column-gap: : 10px;
+}
+
+.bp-grid > .bp-imgs {
+	text-align: center;
+
+	height: 100vh;
+	width: 50vw;
+}
+
+.bp-grid > .booking-form {
+	text-align: center;
+	font-size: 30px;
+	height: 100vh;
+	box-sizing: border-box;
+	border-radius: 0px;
+	margin-top: 0;
+	/* this is an imperfect temporary fix and needs work */
+}
+
+/* end booking page */
+
+/* end signup */
+
 .grid.sidebar-left {
 	grid-template-columns: 200px auto;
 	grid-column-gap: 100px;

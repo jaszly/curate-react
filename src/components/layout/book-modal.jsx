@@ -25,7 +25,7 @@ class Modal extends React.Component {
 				<button onClick={this.show.bind(this)}>List Your Space</button>
 
 				<Rodal
-					className="grid card tall center medium"
+					style={{ width: '90vw' }}
 					visible={this.state.visible}
 					onClose={this.hide.bind(this)}
 				>
@@ -39,8 +39,8 @@ class Modal extends React.Component {
 					<div className="content"></div>
 					<p>this will be a description of the space</p>
 					<h3>Features</h3>
-					<div className="card specs">
-						<div className="content">
+					<div>
+						<div>
 							<ul>
 								<li>
 									<i className="fas fa-wifi" />
@@ -54,9 +54,9 @@ class Modal extends React.Component {
 						</div>
 					</div>
 
-					<div className="sidebar booking">
-						<div className="card">
-							<div className="content large">
+					<div>
+						<div>
+							<div>
 								<h3>
 									$200
 									<small>per hour</small>
@@ -71,3 +71,65 @@ class Modal extends React.Component {
 }
 
 export default Modal
+
+//
+//
+//
+// code for create
+//
+// 		<input
+// 			type="text"
+// 			value={this.state.listing.title}
+// 			onChange={e => this.changeInput(e, 'title')}
+// 		/>
+// 	</div>
+// 	<div className="group">
+// 		<label>Description</label>
+// 		<textarea />
+// 	</div>
+// 	<div className="group">
+// 		<label>City</label>
+// 		<input
+// 			type="text"
+// 			value={this.state.listing.city}
+// 			onChange={e => this.changeInput(e, 'city')}
+// 		/>
+// 	</div>
+// 	<div className="group">
+// 		<label>Country</label>
+// 		<input
+// 			type="text"
+// 			value={this.state.listing.country}
+// 			onChange={e => this.changeInput(e, 'country')}
+// 		/>
+// 	</div>
+// 	<div className="group">
+// 		<label>Price per Night (USD)</label>
+// 		<input
+// 			type="number"
+// 			value={this.state.listing.price}
+// 			onChange={e => this.changeInput(e, 'price')}
+// 		/>
+// 	</div>
+//
+// 	<div className="group"></div>
+// 	<div className="group">
+// 		<label>Upload Photos</label>
+// 		<input type="file" multiple />
+// 	</div>
+// 	<div className="group">
+// 		<label>Amenities</label>
+// 		{this.state.listing.features.map(amenity => (
+// 			<label className="checkbox">
+// 				<input type="checkbox" />
+// 				{amenity.name}
+// 			</label>
+// 		))}
+// 	</div>
+// 	<button className="primary">Publish this Space</button>
+// 	<button className="cancel" onClick="/host">
+// 		<i className="fas fa-times" />
+// 	</button>
+// </form>
+//
+// react component {}

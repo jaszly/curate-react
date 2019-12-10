@@ -96,7 +96,7 @@ div.jumbotron {
 /* //space gallery  */
 .gallery {
 	display: grid;
-	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	border-bottom: 1px solid #e2e2e2;
 }
 

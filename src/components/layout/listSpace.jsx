@@ -56,23 +56,12 @@ class List extends React.Component {
 			listing.features.push(feature)
 			this.setState({ listing: listing })
 		} else {
-			// let listing = this.state.listing
-			// let listing2 = this.state.listing
-			// let i = listing.features.indexOf(e.target.value)
-			// listing.features.splice(i)
-			// this.setState({ listing: listing2 })
 			listing.features = listing.features.filter(listingFeature => {
 				return listingFeature._id != feature._id
 			})
 			this.setState({ listing: listing })
 		}
 	}
-	// 	if(this.state.feature !== this.state.listing.feature) {
-	// 		feature = this.state.feature
-	// 	} else {
-	//
-	// 	}
-	// }
 
 	componentWillMount() {
 		let listing = this.state.listing
@@ -131,7 +120,6 @@ class List extends React.Component {
 								<option>New York City</option>
 								<option>Miami Beach</option>
 								<option>Metro Atlanta Area</option>
-								<option>City Not Listed</option>
 							</Input>
 						</FormGroup>
 
