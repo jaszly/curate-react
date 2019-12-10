@@ -6,7 +6,7 @@ import Space from './components/layout/space'
 import Profile from './components/layout/profile'
 import Login from './components/auth/login'
 import Signup from './components/auth/signup'
-import Modal from './components/layout/modal'
+import Msg from './components/layout/msg'
 import Home from './components/layout/home'
 import List from './components/layout/listSpace'
 
@@ -22,7 +22,7 @@ class App extends React.Component {
 					<Route path="/signup" component={Signup} />
 					<Route path="/list-your-space" component={List} />
 
-					<Route path="/modal" component={Modal} />
+					<Route path="/msg" component={Msg} />
 					<Route path="/" component={Home} />
 				</Switch>
 			</BrowserRouter>
