@@ -14,18 +14,22 @@ import {
 import TopNav from './nav'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import Rodal from 'rodal'
+import 'rodal/lib/rodal.css'
 
 class Space extends React.Component {
 	state = {
 		space: {
 			images: [],
 			features: [],
-			host: { avatar: '', name: '' }
+			host: { avatar: '', name: '', about: '' }
 		},
 		largeImage: '',
 		startDate: null,
 		startTime: null,
-		endTime: null
+		endTime: null,
+		visible: false,
+		check: false
 	}
 
 	componentWillMount() {
@@ -63,6 +67,22 @@ class Space extends React.Component {
 		})
 	}
 
+	show = () => {
+		this.setState({
+			visible: true
+		})
+	}
+
+	hide = () => {
+		this.setState({
+			visible: false
+		})
+	}
+
+	checkboxToggle = e => {
+		this.setState({ check: true })
+	}
+
 	render() {
 		return (
 			<>
@@ -93,11 +113,25 @@ class Space extends React.Component {
 					<div>
 						<div className="grid sidebar-right">
 							<div className="content">
-								<h1>{this.state.space.title}</h1>
-								<i className="fas fa-map-marker-alt"></i>
-								{this.state.space.neighborhood}| {this.state.space.city}
+								<h1
+									className="display-3"
+									style={{ fontFamily: 'Abril Fatface' }}
+								>
+									{this.state.space.title}
+								</h1>
+								<p className="lead" style={{ marginBottom: '42px' }}>
+									<i
+										className="fas fa-map-marker-alt"
+										style={{ marginRight: '6px' }}
+									></i>
+									{this.state.space.neighborhood} | {this.state.space.city}{' '}
+								</p>
 								<div className="card specs">
 									<div className="content">
+										<p className="lead" style={{ marginLeft: '25px' }}>
+											Space Manager
+										</p>
+
 										<small>
 											<span>
 												<div className="user">
@@ -106,27 +140,89 @@ class Space extends React.Component {
 														style={{
 															backgroundImage: `url('${this.state.space.host.avatar}')`
 														}}
-														state
 													></div>
+
 													<div className="name">
-														<small>Hosted by</small>
-														<span>{this.state.space.host.name}</span>
+														<span style={{ color: '#f9a03f' }}>
+															{this.state.space.host.name}
+														</span>
+														<br />
+														<span
+															style={{
+																fontSize: '15px',
+																color: '#333',
+																textAlign: 'center'
+															}}
+														>
+															<span style={{ fontStyle: 'italic' }}>
+																{this.state.space.host.about}
+															</span>
+														</span>
 													</div>
 												</div>
 											</span>
 										</small>
 									</div>
 								</div>
-								<p>{this.state.space.description}</p>
-								<h3>Features</h3>
+								<p
+									className="lead"
+									style={{ marginLeft: '25px', fontSize: '50px' }}
+								>
+									About
+								</p>
+								<p className="smallish">penthouse</p>
+
+								<p className="lead" style={{ fontSize: '18px' }}>
+									{this.state.space.description}
+								</p>
+								<p
+									className="lead"
+									style={{ marginLeft: '25px', fontSize: '50px' }}
+								>
+									Deets
+								</p>
+								<p className="lead" style={{ fontSize: '18px' }}>
+									Rules: Donec mollis nunc ut mollis consectetur. Proin vel
+									vehicula est. Quisque euismod ultricies lectus euismod
+									suscipit. Maecenas et posuere dolor. Nullam mauris ante,
+									faucibus nec vulputate vitae, volutpat nec libero. Nunc
+									pellentesque in magna et rhoncus. Nunc nec augue convallis,
+									pellentesque nunc eget, mollis justo. In rhoncus vulputate
+									ante in efficitur. Integer turpis ligula, facilisis non
+									facilisis at, sodales pellentesque quam. Fusce tristique eros
+									mauris, sit amet semper odio ultricies id. Fusce sed eros
+									arcu.
+								</p>
+								<p className="lead" style={{ fontSize: '18px' }}>
+									Parking: Nunc nec augue convallis, pellentesque nunc eget,
+									mollis justo.
+								</p>
+
 								<div className="card specs">
 									<div className="content">
+										<p className="lead" style={{ fontSize: '50px' }}>
+											Features
+										</p>
+
 										<ul className="grid two">
 											{this.state.space.features.map((feature, i) => {
 												return (
 													<li>
-														<i className={feature.icon} key={i}></i>
-														{feature.displayText}
+														<i
+															className={feature.icon}
+															key={i}
+															style={{ width: '2px', marginRight: '18px' }}
+														></i>
+														<small
+															style={{
+																width: '2px',
+																marginLeft: '10px',
+																fontFamily: 'Open Sans',
+																color: '#333'
+															}}
+														>
+															{feature.displayText}
+														</small>
 													</li>
 												)
 											})}
@@ -134,72 +230,101 @@ class Space extends React.Component {
 									</div>
 								</div>
 							</div>
-							<div className="sidebar center">
-								<div className="card shadow">
-									<div className="content large">
-										<h3>
-											<small>from</small> ${this.state.space.price}
-											<small>per hour</small>
-										</h3>
-										<form className="cal">
-											<div className="group">
-												<h3>Date & Time</h3>
-												<DatePicker
-													selected={this.state.startDate}
-													onChange={this.handleChange}
-													placeholderText="choose a date"
-													showDisabledMonthNavigation
-												/>
 
-												<DatePicker
-													selected={this.state.startTime}
-													onChange={time => this.setStartTime(time)}
-													selectsStart
-													startTime={this.state.startTime}
-													endTime={this.state.endTime}
-													showTimeSelect
-													showTimeSelectOnly
-													timeIntervals={15}
-													timeCaption="Start Time"
-													dateFormat="h:mm aa"
-													placeholderText="start time"
-													isClearable
-												/>
+							<div>
+								<div className="grid sidebar">
+									<p className="lead" style={{ fontSize: '50px' }}>
+										Start Booking
+									</p>
+									<form>
+										<div className="group">
+											<p className="lead">Date</p>
+											<DatePicker
+												selected={this.state.startDate}
+												onChange={this.handleChange}
+												placeholderText="choose a date"
+												showDisabledMonthNavigation
+											/>
+											<p className="lead">Time</p>
 
-												<DatePicker
-													selected={this.state.endTime}
-													onChange={time => this.setEndTime(time)}
-													selectsEnd
-													startTime={this.state.startTime}
-													endTime={this.state.endTime}
-													minTime={this.state.minTime}
-													showTimeSelect
-													showTimeSelectOnly
-													timeIntervals={15}
-													timeCaption="End Time"
-													dateFormat="h:mm aa"
-													placeholderText="estimated end time"
-													isClearable
-													showDisabledTimeNavigation
-												/>
-											</div>
-											<FormGroup>
-												<Label for="Text">Please Describe Your Request</Label>
-												<small>
-													Be sure to tell the host what you need the space for!
-												</small>
-												<Input type="textarea" name="text" id="exampleText" />
-											</FormGroup>
+											<DatePicker
+												selected={this.state.startTime}
+												onChange={time => this.setStartTime(time)}
+												selectsStart
+												startTime={this.state.startTime}
+												endTime={this.state.endTime}
+												showTimeSelect
+												showTimeSelectOnly
+												timeIntervals={15}
+												timeCaption="Start Time"
+												dateFormat="h:mm aa"
+												placeholderText="start time"
+												isClearable
+											/>
 
-											<div className="group">
-												<button style={{ width: '200px', color: 'black' }}>
-													{' '}
-													Request to Book
-												</button>
-											</div>
-										</form>
-									</div>
+											<DatePicker
+												selected={this.state.endTime}
+												onChange={time => this.setEndTime(time)}
+												selectsEnd
+												startTime={this.state.startTime}
+												endTime={this.state.endTime}
+												minTime={this.state.minTime}
+												showTimeSelect
+												showTimeSelectOnly
+												timeIntervals={15}
+												timeCaption="End Time"
+												dateFormat="h:mm aa"
+												placeholderText="estimated end time"
+												isClearable
+												showDisabledTimeNavigation
+											/>
+										</div>
+									</form>
+									<FormGroup>
+										<p className="lead">Request</p>
+										<small>
+											Be sure to tell the host what you need the space for!
+										</small>
+										<Input type="textarea" name="text" id="exampleText" />
+									</FormGroup>
+									<button className="primary" onClick={this.show.bind(this)}>
+										{' '}
+										Request to Book
+									</button>
 								</div>
+								<Rodal
+									visible={this.state.visible}
+									onClose={this.hide.bind(this)}
+									width={400}
+								>
+									<div>
+										<p className="lead" style={{ fontSize: '20px' }}>
+											Please agree to Curate's Terms & Conditions Below:
+										</p>
+
+										<div>
+											<p classname="lead" style={{ fontSize: '13px' }}>
+												Guests may cancel their Booking between 30 days and 7
+												days before the start time and receive a 50% refund
+												(excluding Fees) of their Booking Price. Cancellations
+												submitted less than 7 days before the Event start time
+												are not refundable.
+											</p>
+										</div>
+										<FormGroup check>
+											<Label check>
+												<Input
+													type="checkbox"
+													onChange={e => this.checkboxToggle(e)}
+												/>
+												<p className="lead" style={{ fontSize: '15px' }}>
+													I agree to the terms and conditions{' '}
+												</p>
+											</Label>
+										</FormGroup>
+									</div>
+									<button className="primary"> Send Request</button>
+								</Rodal>
 							</div>
 						</div>
 					</div>

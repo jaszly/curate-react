@@ -71,7 +71,7 @@ class Profile extends React.Component {
 	render() {
 		return (
 			<div>
-				<TopNav />
+				<TopNav history={this.props.history} />
 				<Nav tabs>
 					<NavItem>
 						<NavLink
@@ -90,7 +90,7 @@ class Profile extends React.Component {
 								this.toggle('2')
 							}}
 						>
-							Bookings
+							My Listings
 						</NavLink>
 					</NavItem>
 				</Nav>
