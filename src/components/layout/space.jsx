@@ -86,7 +86,10 @@ class Space extends React.Component {
 	render() {
 		return (
 			<>
-				<TopNav />
+				<TopNav
+					filterFunction={this.filterFunction}
+					history={this.props.history}
+				/>
 				<div className="gallery">
 					<div
 						className="image-main"
@@ -295,7 +298,8 @@ class Space extends React.Component {
 								<Rodal
 									visible={this.state.visible}
 									onClose={this.hide.bind(this)}
-									width={400}
+									width="700"
+									height="440"
 								>
 									<div>
 										<p className="lead" style={{ fontSize: '20px' }}>
@@ -303,12 +307,35 @@ class Space extends React.Component {
 										</p>
 
 										<div>
-											<p classname="lead" style={{ fontSize: '13px' }}>
+											<p
+												classname="lead"
+												style={{ fontSize: '25px', fontFamily: 'Lato' }}
+											>
+												Curate's Terms:
+											</p>
+											<p
+												classname="lead"
+												style={{ fontSize: '17px', fontFamily: 'Lato' }}
+											>
 												Guests may cancel their Booking between 30 days and 7
 												days before the start time and receive a 50% refund
 												(excluding Fees) of their Booking Price. Cancellations
 												submitted less than 7 days before the Event start time
 												are not refundable.
+											</p>
+											<p
+												classname="lead"
+												style={{ fontSize: '25px', fontFamily: 'Lato' }}
+											>
+												{this.state.space.host.name}
+												{"'s"} Terms:
+											</p>
+											<p
+												classname="lead"
+												style={{ fontSize: '17px', fontFamily: 'Lato' }}
+											>
+												Price. Cancellations submitted less than 7 days before
+												the Event start time are not refundable.
 											</p>
 										</div>
 										<FormGroup check>
@@ -323,7 +350,15 @@ class Space extends React.Component {
 											</Label>
 										</FormGroup>
 									</div>
-									<button className="primary"> Send Request</button>
+									<Link
+										className="primary"
+										style={{
+											fontFamily: 'Lato',
+											fontSize: '1rem'
+										}}
+									>
+										Send Request
+									</Link>
 								</Rodal>
 							</div>
 						</div>
@@ -333,7 +368,7 @@ class Space extends React.Component {
 		)
 	}
 }
-export default withRouter(Space)
+export default Space
 
 // 	state = {
 // 		space: {
