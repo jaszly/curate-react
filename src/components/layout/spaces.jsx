@@ -81,7 +81,10 @@ class Spaces extends React.Component {
 	render() {
 		return (
 			<div>
-				<TopNav filterFunction={this.filterFunction} />
+				<TopNav
+					filterFunction={this.filterFunction}
+					history={this.props.history}
+				/>
 				<Header searchSpaces={this.searchSpaces} />
 				<div className="grid small five">
 					{this.state.spaces.map((space, i) => (
