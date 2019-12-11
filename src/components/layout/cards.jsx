@@ -39,18 +39,16 @@ class Cards extends React.Component {
 							<CardSubtitle className="content">
 								${this.props.space.price} / hour
 							</CardSubtitle>
-							<CardText>
+							<CardText style={{ fontSize: '20px' }}>
 								<small className="small">
 									<i
 										className="fas fa-map-marker-alt"
-										style={{ color: '#f9a03f', marginRight: '2px' }}
+										style={{ color: '#f9a03f', marginRight: '10px' }}
 									/>
-
-									<span className="city">
-										{this.props.space.neighborhood}
-										<span className="city"> | {this.props.space.city}</span>
-									</span>
+									{this.props.space.neighborhood}
 								</small>
+								<br />
+								<small className="small">{this.props.space.city}</small>
 							</CardText>
 							<Link
 								to={`/spaces/${this.props.space._id}`}
