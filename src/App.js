@@ -9,6 +9,7 @@ import Signup from './components/auth/signup'
 import Msg from './components/layout/msg'
 import Home from './components/layout/home'
 import List from './components/layout/listSpace'
+import Cities from './components/layout/cities'
 
 class App extends React.Component {
 	render() {
@@ -17,6 +18,8 @@ class App extends React.Component {
 				<Switch>
 					<Route path="/spaces/:id" component={Space} />
 					<Route path="/spaces" component={Spaces} />
+					<Route path="/cities" component={Cities} />
+
 					<Route path="/profile" component={Profile} />
 					<Route path="/login" component={Login} />
 					<Route path="/signup" component={Signup} />

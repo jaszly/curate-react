@@ -262,7 +262,6 @@ class Space extends React.Component {
 												timeCaption="Start Time"
 												dateFormat="h:mm aa"
 												placeholderText="start time"
-												isClearable
 											/>
 
 											<DatePicker
@@ -278,7 +277,6 @@ class Space extends React.Component {
 												timeCaption="End Time"
 												dateFormat="h:mm aa"
 												placeholderText="estimated end time"
-												isClearable
 												showDisabledTimeNavigation
 											/>
 										</div>
@@ -351,6 +349,7 @@ class Space extends React.Component {
 										</FormGroup>
 									</div>
 									<Link
+										to="/msg"
 										className="primary"
 										style={{
 											fontFamily: 'Lato',

@@ -90,7 +90,7 @@ export default Cards
 //
 // 			<span>
 // 				{this.props.space.neighborhood}{' '}
-// 				<span className="city"> | {this.props.space.city}</span>
+// 				<span className="space"> | {this.props.space.space}</span>
 // 			</span>
 // 		</small>
 //

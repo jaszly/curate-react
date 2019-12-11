@@ -99,11 +99,28 @@
 	grid-row-gap: 5px;
 }
 .grid.small {
-	padding: 20px;
+	padding: 16px;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 20px;
 	grid-row-gap: 20px;
 }
+.grid.tiny {
+	padding: 20px;
+	margin: 89px 16px 25px 58px;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
+	width:90%
+}
+
+
+.grid .city {
+		padding: 20px;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+
+	}
 
 .grid.medium {
 	grid-template-columns: 1000px;

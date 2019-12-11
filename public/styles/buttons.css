@@ -20,10 +20,11 @@ button:hover,
 }
 
 button.primary:hover,
-.button:hover {
+.button:hover,
+a.primary:hover {
 	color: white;
+	text-decoration: none;
 }
-
 button.primary,
 a.primary,
 .button.primary {
