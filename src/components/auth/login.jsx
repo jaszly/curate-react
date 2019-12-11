@@ -18,7 +18,7 @@ class Login extends React.Component {
 	userLogin = e => {
 		e.preventDefault()
 		axios
-			.post('http://localhost:4000/login', this.state.user)
+			.post(`${process.env.REACT_APP_API}/login`, this.state.user)
 			.then(res => {
 				console.log('data comes back')
 				console.log(res)

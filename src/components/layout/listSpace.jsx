@@ -37,7 +37,7 @@ class List extends React.Component {
 		e.preventDefault()
 		console.log('about to submit')
 		axios
-			.post('http://localhost:4000/spaces', this.state.listing, {
+			.post(`${process.env.REACT_APP_API}/spaces`, this.state.listing, {
 				headers: {
 					Authorization: `Bearer ${localStorage.getItem('token')}`
 				}
@@ -66,7 +66,7 @@ class List extends React.Component {
 	componentWillMount() {
 		let listing = this.state.listing
 		axios
-			.get('http://localhost:4000/features')
+			.get(`${process.env.REACT_APP_API}/features`)
 			.then(res => {
 				console.log({ res })
 				this.setState({ features: res.data })

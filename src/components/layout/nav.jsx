@@ -41,7 +41,7 @@ class TopNav extends React.Component {
 
 	componentDidMount() {
 		axios
-			.get('http://localhost:4000/auth', {
+			.get(`${process.env.REACT_APP_API}/auth`, {
 				headers: {
 					Authorization: `Bearer ${localStorage.getItem('token')}`
 				}

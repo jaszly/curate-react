@@ -22,7 +22,7 @@ class Home extends React.Component {
 	}
 	componentWillMount() {
 		axios
-			.get('http://localhost:4000/cities')
+			.get(`${process.env.REACT_APP_API}/cities`)
 			.then(res => {
 				console.log('res.data:', res.data)
 				this.setState({

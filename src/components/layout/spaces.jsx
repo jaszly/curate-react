@@ -15,7 +15,7 @@ class Spaces extends React.Component {
 
 	componentWillMount() {
 		axios
-			.get('http://localhost:4000/spaces')
+			.get(`${process.env.REACT_APP_API}/spaces`)
 			.then(res => {
 				console.log('res.data:', res.data)
 				this.setState({
