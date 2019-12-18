@@ -87,7 +87,8 @@ a.primary:hover {
 	margin-left: 20px;
 }
 
-.secondary {
+.secondary,
+a.secondary {
 	background: #f16d56;
 	/* background: #516b4b; */
 	padding: 14px 20px;
@@ -98,7 +99,8 @@ a.primary:hover {
 	margin-left: 40px;
 }
 
-.secondary:hover {
+.secondary:hover,
+a.secondary:hover {
 	background: #fff;
 }
 

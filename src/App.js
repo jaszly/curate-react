@@ -19,12 +19,10 @@ class App extends React.Component {
 					<Route path="/spaces/:id" component={Space} />
 					<Route path="/spaces" component={Spaces} />
 					<Route path="/cities" component={Cities} />
-
 					<Route path="/profile" component={Profile} />
 					<Route path="/login" component={Login} />
 					<Route path="/signup" component={Signup} />
 					<Route path="/list-your-space" component={List} />
-
 					<Route path="/msg" component={Msg} />
 					<Route path="/" component={Home} />
 				</Switch>

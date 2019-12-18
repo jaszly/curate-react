@@ -6,15 +6,7 @@ import TopNav from './nav'
 import Filters from './filters'
 import Cards from './cards.jsx'
 import axios from 'axios'
-import {
-	Jumbotron,
-	Button,
-	Form,
-	FormGroup,
-	Label,
-	Input,
-	FormText
-} from 'reactstrap'
+import { Jumbotron, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 
 class Home extends React.Component {
 	state = {
@@ -54,19 +46,7 @@ class Home extends React.Component {
 						</span>
 						<div> </div>
 						<div>
-							<Link
-								to="/spaces"
-								className="primary"
-								style={{
-									fontFamily: 'Lato',
-									fontSize: '1rem',
-									backgroundColor: 'tomato',
-									width: '200px',
-									opacity: '80%',
-									backgroundPosition: 'center',
-									marginTop: '15px'
-								}}
-							>
+							<Link to="/spaces" className="secondary">
 								Browse Spaces
 							</Link>
 						</div>

@@ -34,7 +34,7 @@ class Space extends React.Component {
 
 	componentWillMount() {
 		let spaceId = this.props.match.params.id
-		let spaceURL = `http://localhost:4000/spaces/${spaceId}`
+		let spaceURL = `${process.env.REACT_APP_API}/spaces/${spaceId}`
 		axios
 			.get(spaceURL)
 			.then(res => {
