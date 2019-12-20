@@ -44,10 +44,11 @@ class Home extends React.Component {
 						>
 							Find the perfect space for your creative needs
 						</span>
-
-						<Link to="/spaces" className="primary">
-							Browse Spaces
-						</Link>
+						<div>
+							<Link to="/spaces" className="primary">
+								Browse Spaces
+							</Link>
+						</div>
 					</div>
 				</div>
 				<div className="grid tiny">
