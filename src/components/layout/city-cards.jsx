@@ -17,6 +17,17 @@ class CityCards extends React.Component {
 		this.setState({ city: this.props.city })
 	}
 
+	// componentWillMount() {
+	// 	let cityId = this.props.match.params.id
+	// 	let cityURL = `${process.env.REACT_APP_API}/spaces/${cityId}`
+	// 	axios
+	// 		.get(cityURL)
+	// 		.then(res => {})
+	// 		.catch(err => {
+	// 			console.log('ERROR', err)
+	// 		})
+	// }
+
 	componentWillReceiveProps(props) {
 		this.setState({ city: this.props.city })
 	}

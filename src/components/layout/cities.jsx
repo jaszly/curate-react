@@ -10,19 +10,19 @@ class Cities extends React.Component {
 		cities: [{ name: '', state: '' }]
 	}
 
-	componentWillMount() {
-		axios
-			.get(`${process.env.REACT_APP_API}/cities`)
-			.then(res => {
-				console.log('res.data:', res.data)
-				this.setState({
-					cities: res.data
-				})
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
+	// componentWillMount() {
+	// 	axios
+	// 		.get(`${process.env.REACT_APP_API}/cities`)
+	// 		.then(res => {
+	// 			console.log('res.data:', res.data)
+	// 			this.setState({
+	// 				cities: res.data
+	// 			})
+	// 		})
+	// 		.catch(err => {
+	// 			console.log(err)
+	// 		})
+	// }
 
 	render() {
 		return (
