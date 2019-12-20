@@ -46,7 +46,7 @@ class Home extends React.Component {
 						</span>
 						<div> </div>
 						<div>
-							<Link to="/spaces" className="secondary">
+							<Link to="/spaces" className="primary">
 								Browse Spaces
 							</Link>
 						</div>
