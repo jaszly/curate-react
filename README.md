@@ -25,7 +25,7 @@ Say goodbye to boring studios and hello to a modern solution.
 ![Img](https://github.com/jaszly/curate-react/blob/master/images/createaccount.png)
 
 ### Make A Booking
-["Book" Park Slope Boheme] (https://book-curate-react.herokuapp.com/spaces/5df058661c9d440000f79d5f)
+["Book" Park Slope Boheme](https://book-curate-react.herokuapp.com/spaces/5df058661c9d440000f79d5f)
 -Under "Start Booking" choose any time, time and request 
 -Click request to book and send request
 
