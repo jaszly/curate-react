@@ -7,11 +7,16 @@ Say goodbye to boring studios and hello to a modern solution.
 ![Img](https://github.com/jaszly/curate-react/blob/master/images/bookingterms.png)
 
 
-## Demo
-[View Curate on Heroku](https://book-curate-react.herokuapp.com/spaces)
-*Many features are a work in progress! For a working demo follow steps below:*
+## Demos:
+*Many features are a work in progress! For a working demo follow one below:*
+
+### Make an account
+[Signup on Curate](https://book-curate-react.herokuapp.com/signup)
+- Create an account
+- Click "signup" when finished
 
 ### View a space
+[View All Available Spaces](https://book-curate-react.herokuapp.com/spaces)
 - Search "New York City"  in the dropdown or via search bar
 - Select "explore space" on Park Slope Boheme
 - View Photos
@@ -19,10 +24,10 @@ Say goodbye to boring studios and hello to a modern solution.
 - Click "request to book" and "send"
 ![Img](https://github.com/jaszly/curate-react/blob/master/images/createaccount.png)
 
-### Make an account
-[Signup on Curate](https://book-curate-react.herokuapp.com/signup)
-- Create an account
-- Click "signup" when finished
+### Make A Booking
+["Book" Park Slope Boheme] (https://book-curate-react.herokuapp.com/spaces/5df058661c9d440000f79d5f)
+-Under "Start Booking" choose any time, time and request 
+-Click request to book and send request
 
 
 ## Setup
